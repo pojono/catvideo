@@ -10,4 +10,11 @@ Required repository secrets:
 
 - `DEPLOY_HOST`: `89.169.138.111`
 - `DEPLOY_USER`: `ubuntu`
-- `DEPLOY_SSH_KEY`: private SSH key with access to the server
+- `DEPLOY_SSH_KEY`: private deploy key generated only for this site
+
+Current deploy key:
+
+- private key on local machine: `~/.ssh/catvideo_deploy_ed25519`
+- public key installed on server: `~/.ssh/authorized_keys`
+
+Do not use the local administrative key `~/.ssh/tasks_deploy` as a GitHub secret.
