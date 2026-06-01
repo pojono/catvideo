@@ -4,21 +4,131 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cat Video</title>
-    <meta name="description" content="Cat Video is getting ready.">
+    <meta name="description" content="Cat Video — короткие видео с котиками, спокойная подборка для перерыва.">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="/assets/catvideo-hero.png" as="image">
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body>
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Cat Video">
+        <span class="brand-mark">cv</span>
+        <span>Cat Video</span>
+      </a>
+      <nav aria-label="Разделы">
+        <a href="#fresh">Новое</a>
+        <a href="#collections">Подборки</a>
+        <a href="#cdn">Качество</a>
+      </nav>
+    </header>
+
     <main>
-      <p class="eyebrow">catvideo.space</p>
-      <h1>Видео с котами скоро будут здесь</h1>
-      <p class="lead">
-        Мы готовим уютное место для коротких роликов, смешных моментов и важных кошачьих новостей.
-      </p>
-      <section aria-label="Статус">
-        <span>Мурчим над запуском</span>
-        <span>SSL включен</span>
-        <span>Автодеплой готов</span>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">catvideo.space</p>
+          <h1 id="hero-title">Короткие видео с котиками для спокойного перерыва</h1>
+          <p class="lead">
+            Уютная подборка смешных, милых и странно важных моментов из кошачьей жизни.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#fresh">Смотреть подборку</a>
+            <a class="button secondary" href="#cdn">Как доставляем видео</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="fresh" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Новые клипы</p>
+          <h2>Сегодня в ленте</h2>
+        </div>
+        <div class="video-grid">
+          <article class="video-card">
+            <a class="thumb video-thumb" href="https://s3.twcstorage.ru/catvideo-media/media/cat-body-language.mp4" data-cdn-video="https://s3.twcstorage.ru/catvideo-media/media/cat-body-language.mp4" aria-label="Коты у окна">
+              <video autoplay muted loop playsinline preload="metadata" poster="https://s3.twcstorage.ru/catvideo-media/posters/cat-body-language.jpg">
+                <source src="https://s3.twcstorage.ru/catvideo-media/media/cat-body-language.mp4" type="video/mp4">
+              </video>
+              <span class="duration">0:04</span>
+            </a>
+            <div class="video-meta">
+              <h3>Коты у окна</h3>
+              <p>Пара синхронно следит за движением снаружи.</p>
+            </div>
+          </article>
+          <article class="video-card">
+            <a class="thumb video-thumb" href="https://s3.twcstorage.ru/catvideo-media/media/cat-roaming-1.mp4" data-cdn-video="https://s3.twcstorage.ru/catvideo-media/media/cat-roaming-1.mp4" aria-label="Маршрут от первого лица">
+              <video autoplay muted loop playsinline preload="metadata" poster="https://s3.twcstorage.ru/catvideo-media/posters/cat-roaming-1.jpg">
+                <source src="https://s3.twcstorage.ru/catvideo-media/media/cat-roaming-1.mp4" type="video/mp4">
+              </video>
+              <span class="duration">0:05</span>
+            </a>
+            <div class="video-meta">
+              <h3>Маршрут от первого лица</h3>
+              <p>Короткий фрагмент с камеры свободно гуляющего кота.</p>
+            </div>
+          </article>
+          <article class="video-card">
+            <a class="thumb video-thumb" href="https://s3.twcstorage.ru/catvideo-media/media/cat-roaming-3.mp4" data-cdn-video="https://s3.twcstorage.ru/catvideo-media/media/cat-roaming-3.mp4" aria-label="Кошачья прогулка">
+              <video autoplay muted loop playsinline preload="metadata" poster="https://s3.twcstorage.ru/catvideo-media/posters/cat-roaming-3.jpg">
+                <source src="https://s3.twcstorage.ru/catvideo-media/media/cat-roaming-3.mp4" type="video/mp4">
+              </video>
+              <span class="duration">0:05</span>
+            </a>
+            <div class="video-meta">
+              <h3>Кошачья прогулка</h3>
+              <p>Быстрый взгляд на мир с низкой кошачьей высоты.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="collections" class="section split">
+        <div>
+          <p class="eyebrow">Подборки</p>
+          <h2>Кошачьи жанры</h2>
+        </div>
+        <div class="collection-list">
+          <a href="#" data-cdn-playlist="/playlists/morning-purr.json">
+            <span>Утреннее мурчание</span>
+            <strong>12 видео</strong>
+          </a>
+          <a href="#" data-cdn-playlist="/playlists/box-studies.json">
+            <span>Исследования коробок</span>
+            <strong>9 видео</strong>
+          </a>
+          <a href="#" data-cdn-playlist="/playlists/tail-drama.json">
+            <span>Драма хвоста</span>
+            <strong>7 видео</strong>
+          </a>
+        </div>
+      </section>
+
+      <section id="cdn" class="section delivery">
+        <div>
+          <p class="eyebrow">Доставка видео</p>
+          <h2>Медиа лежит рядом с зрителем</h2>
+          <p>
+            Ролики будут отдаваться через CDN: быстрый старт, аккуратное кеширование и стабильная загрузка
+            на мобильном интернете. Основной сайт остаётся лёгким, а видео живёт на медиа-домене.
+          </p>
+          <p class="credits">
+            Тестовые ролики: Wikimedia Commons, CC BY-SA 2.0 и CC BY 2.5. Позже их можно заменить на собственные видео.
+          </p>
+        </div>
+        <dl>
+          <div>
+            <dt>Видео</dt>
+            <dd>Timeweb CDN</dd>
+          </div>
+          <div>
+            <dt>Сайт</dt>
+            <dd>catvideo.space</dd>
+          </div>
+          <div>
+            <dt>HTTPS</dt>
+            <dd>Автоматически</dd>
+          </div>
+        </dl>
       </section>
     </main>
   </body>
