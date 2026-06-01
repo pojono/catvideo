@@ -1,0 +1,14 @@
+catvideo.space {
+	root * /usr/share/caddy
+	encode zstd gzip
+	file_server
+
+	header {
+		X-Content-Type-Options nosniff
+		Referrer-Policy no-referrer-when-downgrade
+	}
+}
+
+www.catvideo.space {
+	redir https://catvideo.space{uri} permanent
+}
